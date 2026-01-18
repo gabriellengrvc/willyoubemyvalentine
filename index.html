@@ -1,36 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>valentine</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Valentine Envelope</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<section class="hero">
-  <h1>Happy Valentine's Day</h1>
-  <p>Scroll down</p>
-</section>
+  <body>
+    <section class="hero">
+      <h1>HAPPY VALENTINE'S DAY</h1>
+      <p>Scroll down</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </section>
 
-<section class="scroll-section">
-  <div class="envelope" id="envelope">
-    <div class="flap" id="flap"></div>
-    <div class="body"></div>
-    <div class="letter" id="letter">
-      <p>Will you be my Valentine?</p>
-      <div class="buttons">
-        <button class="btn" id="yesBtn">Yes</button>
-        <button class="btn" id="noBtn">No</button>
+    <section class="scroll-stage" id="stage">
+      <div class="sticky">
+        <div class="wrapper" id="wrapper">
+          <div class="lid one"></div>
+          <div class="lid two"></div>
+          <div class="envelope"></div>
+          <div class="letter">
+            <img class="letter-img" src="assets/valentinecard.png" alt="Valentine letter" />
+            <div class="letter-ui" id="letterUI">
+              <label class="choice yes">
+                <input type="checkbox" id="yesBox" />
+                <span></span>
+              </label>
+              <label class="choice no">
+                <input type="checkbox" id="noBox" />
+                <span></span>
+              </label>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="footer">Made with love ❤️</div>
-<canvas id="confetti-canvas"></canvas>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-<script src="script.js"></script>
-</body>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
