@@ -244,7 +244,7 @@ body{
   border: 2px solid black;
   background: rgba(255,255,255,0.85);
   color: black;
-  width: clamp(22px, 3vw, 32px);
+  width: clamp(18px, 3vw, 25px);
   aspect-ratio: 1 / 1;
 }
 
@@ -272,6 +272,14 @@ body{
   height: auto;
 }
 
+.footer-text{
+  font-family: "NotoSerifExtraCondensed", serif !important;
+  font-style: normal;
+  font-weight: 200;
+  font-size: clamp(7px, 1.5vw, 12px);
+  color: white;
+}
+
 @media (max-width: 480px){
   .wrapper{
     transform: scale(0.85);
@@ -281,3 +289,4 @@ body{
     transform: scale(0.85) translateY(20px);
   }
 }
+
