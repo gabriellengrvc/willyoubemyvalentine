@@ -1,62 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Valentine Envelope</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 happy valentine's day waffles</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
+<body class="scroll-locked">
 
-  <body>
-    <section class="hero">
-      <h1>HAPPY VALENTINE'S DAY</h1>
-      <p>scroll down</p>
-      <br/>
-      <br/>
-      <br/>
-      <img class="calendar" src="assets/calendar.png"/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-    </section>
+    <div id="loading-screen">
+        <img src="assets/loading.gif" alt="Loading..." class="loading-gif">
+    </div>
 
-    <section class="scroll-stage" id="stage">
-      <div class="sticky">
-        <div class="wrapper" id="wrapper">
-          <div class="lid one"></div>
-          <div class="lid two"></div>
-          <div class="envelope"></div>
-          <div class="letter">
-            <img class="letter-img" src="assets/valentinecard.png" alt="Valentine letter" />
-            <div class="letter-ui" id="letterUI">
-              <label class="choice yes">
-                <input type="checkbox" id="yesBox" />
-                <span></span>
-              </label>
-              <label class="choice no">
-                <input type="checkbox" id="noBox" />
-                <span></span>
-              </label>
+    <button type="button" id="sound-toggle" class="sound-toggle" aria-label="Toggle background music">
+        <img id="sound-toggle-img" src="assets/soundoff.png" alt="">
+    </button>
+
+    <div id="mail-stage" class="mail-stage">
+        <img id="mail-img" src="assets/mail1.png" alt="Mail">
+    </div>
+
+
+    <div id="main-container">
+        <div class="envelope-container">
+            <div class="envelope-body"></div>
+            <div class="bottom-flap"></div>
+            <div class="side-flap-left"></div>
+            <div class="side-flap-right"></div>
+            <div class="opening-flap"></div>
+            <div class="letter">
+                <img src="assets/valentinecard.png" alt="Valentine's Letter">
+                <div class="checkbox-overlay">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="yes" name="answer" onclick="handleAnswer(this)">
+                        <label for="yes">YES</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="no" name="answer" onclick="handleAnswer(this)">
+                        <label for="no">NO</label>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+
+    <div class="scroll-hint" id="scroll-hint">
+        <span class="scroll-hint-arrow" aria-hidden="true">↓</span>
+    </div>
+
+    <section class="mail-scroll-section"><img src="assets/mail2.png" alt=""></section>
+    <br>
+    <br>
+    <section class="mail-scroll-section"><img src="assets/mail3.png" alt=""></section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="mail-scroll-section"><img src="assets/mail4.png" alt=""></section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="mail-scroll-section"><img src="assets/mail5.png" alt=""></section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="mail-scroll-section"><img src="assets/mail6.png" alt=""></section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="scroll-spacer"></div>
+
+    <section class="sign-section sign-section--hidden" id="sign-section">
+        <h2 class="sign-title">Sign the contract</h2>
+        <div class="sign-box">
+            <canvas id="sign-canvas" width="400" height="160" aria-label="Signature"></canvas>
+            <p class="sign-hint">Draw your signature with your mouse</p>
+            <div class="sign-actions">
+                <button type="button" class="sign-clear" id="sign-clear">Clear</button>
+                <button type="button" class="sign-save" id="sign-save">Save as image</button>
+            </div>
+        </div>
+        <footer class="sign-footer">made with love</footer>
     </section>
-    <footer>
-      <p class="footer-text">made with ♡  <a href="https://wa.me/41799686769?text=Hi%20valentine">gabrielle</a></p>
-      <p class="footer-text">photo from our first walk together <br/> of many more to come</p>
-      <br/>
-    </footer>
+
+    <audio id="bgMusic" src="sounds/hijodelaluna.mp3" preload="auto" loop></audio>
     <audio id="envelopeSound" src="sounds/paper.mp3" preload="auto"></audio>
     <audio id="yesSound" src="sounds/yay.mp3" preload="auto"></audio>
     <audio id="noSound" src="sounds/boo.mp3" preload="auto"></audio>
+
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
