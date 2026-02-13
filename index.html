@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body class="scroll-locked">
-
     <div id="loading-screen">
         <img src="assets/loading.gif" alt="Loading..." class="loading-gif">
     </div>
@@ -21,7 +20,6 @@
         <img id="mail-img" src="assets/mail1.png" alt="Mail">
     </div>
 
-
     <div id="main-container">
         <div class="envelope-container">
             <div class="envelope-body"></div>
@@ -29,8 +27,10 @@
             <div class="side-flap-left"></div>
             <div class="side-flap-right"></div>
             <div class="opening-flap"></div>
+            
             <div class="letter">
                 <img src="assets/valentinecard.png" alt="Valentine's Letter">
+                
                 <div class="checkbox-overlay">
                     <div class="checkbox-option">
                         <input type="checkbox" id="yes" name="answer" onclick="handleAnswer(this)">
@@ -50,29 +50,12 @@
     </div>
 
     <section class="mail-scroll-section"><img src="assets/mail2.png" alt=""></section>
-    <br>
-    <br>
     <section class="mail-scroll-section"><img src="assets/mail3.png" alt=""></section>
-    <br>
-    <br>
-    <br>
-    <br>
     <section class="mail-scroll-section"><img src="assets/mail4.png" alt=""></section>
-    <br>
-    <br>
-    <br>
-    <br>
     <section class="mail-scroll-section"><img src="assets/mail5.png" alt=""></section>
-    <br>
-    <br>
-    <br>
-    <br>
     <section class="mail-scroll-section"><img src="assets/mail6.png" alt=""></section>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="scroll-spacer"></div>
+    <div class="envelope-sign-gap" aria-hidden="true"></div>
 
     <section class="sign-section sign-section--hidden" id="sign-section">
         <h2 class="sign-title">Sign the contract</h2>
@@ -84,7 +67,7 @@
                 <button type="button" class="sign-save" id="sign-save">Save as image</button>
             </div>
         </div>
-        <footer class="sign-footer">made with love</footer>
+        <footer class="sign-footer">made with love <a href="https://wa.me/0799686769?text=Hello%20Valentine.">gabrielle</a></footer>
     </section>
 
     <audio id="bgMusic" src="sounds/hijodelaluna.mp3" preload="auto" loop></audio>

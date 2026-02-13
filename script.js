@@ -1,3 +1,4 @@
+
 window.addEventListener('load', () => {
   setTimeout(() => {
       document.getElementById('loading-screen').classList.add('hidden');
@@ -36,7 +37,7 @@ const soundToggleImg = document.getElementById('sound-toggle-img');
 const SOUND_ON_SRC = 'assets/soundon.png';
 const SOUND_OFF_SRC = 'assets/soundoff.png';
 
-if (bgMusic) bgMusic.volume = 0.5;
+if (bgMusic) bgMusic.volume = 0.20;
 
 if (bgMusic && soundToggle && soundToggleImg) {
   soundToggle.addEventListener('click', (e) => {
@@ -149,6 +150,49 @@ function handleAnswer(checkbox) {
       } else {
           playOnce(noSound);
       }
+  }
+}
+
+function createConfettiExplosion() {
+  const confettiImages = [
+      'assets/confetti1.png',
+  ];
+
+  for (let i = 0; i < 30; i++) {
+      const confetti = document.createElement('img');
+      const randomImage = confettiImages[Math.floor(Math.random() * confettiImages.length)];
+      confetti.src = randomImage;
+      
+      confetti.style.position = 'fixed';
+      confetti.style.left = '50%';
+      confetti.style.top = '50%';
+      confetti.style.width = (Math.random() * 40 + 20) + 'px'; 
+      confetti.style.height = 'auto';
+      confetti.style.pointerEvents = 'none';
+      confetti.style.zIndex = '10000';
+      confetti.style.transition = 'all 2s ease-out';
+      confetti.style.opacity = '1';
+      
+      confetti.onerror = function() {
+          this.style.display = 'none';
+      };
+      
+      document.body.appendChild(confetti);
+
+      setTimeout(() => {
+          const angle = (Math.PI * 2 * i) / 30;
+          const distance = 200 + Math.random() * 300;
+          const x = Math.cos(angle) * distance;
+          const y = Math.sin(angle) * distance;
+          const rotation = Math.random() * 720 - 360; 
+          
+          confetti.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+          confetti.style.opacity = '0';
+      }, 10);
+
+      setTimeout(() => {
+          confetti.remove();
+      }, 2000);
   }
 }
 

@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'Azura';
+  src: url('assets/uzura.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Azura', serif;
 }
 
 :root {
@@ -9,7 +17,7 @@
 }
 
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Azura', serif;
   background: var(--page-bg);
   background-attachment: fixed;
   overflow-x: hidden;
@@ -29,12 +37,12 @@ body.scroll-locked {
 
 .sound-toggle {
   position: fixed;
-  top: 12px;
-  right: 12px;
+  top: 16px;
+  right: 16px;
   z-index: 10001;
-  width: 56px;
-  height: 56px;
-  padding: 50;
+  width: min(70px, 18vw);
+  height: min(70px, 18vw);
+  padding: 0; 
   border: none;
   background: transparent;
   cursor: pointer;
@@ -43,12 +51,14 @@ body.scroll-locked {
   justify-content: center;
   transition: transform 0.2s ease;
 }
+
 .sound-toggle:hover {
   transform: scale(1.08);
 }
+
 .sound-toggle img {
-  width: 48px;
-  height: 48px;
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: contain;
 }
@@ -128,7 +138,6 @@ body.scroll-locked {
   padding-top: 32px;
   font-size: 14px;
   color: #6b5b4d;
-  font-style: italic;
 }
 
 .sign-title {
@@ -225,8 +234,8 @@ body.scroll-locked {
 }
 
 .loading-gif {
-  max-width: 300px;
-  max-height: 300px;
+  width: min(240px, 40vw);
+  height: auto;
 }
 
 .mail-stage {
@@ -350,10 +359,11 @@ body.scroll-locked {
 
 .letter {
   position: absolute;
-  width: 95%;
-  height: 98%;
-  left: 2.5%;
-  top: 2%;
+  width: 102%;     
+  height: 102%;    
+  left: 50%;
+  top: 1%;        
+  transform: translateX(-50%);
   z-index: 3;
   transition: top 0.6s ease, opacity 0.6s ease;
   overflow: hidden;
@@ -374,7 +384,7 @@ body.scroll-locked {
 
 .checkbox-overlay {
   position: absolute;
-  bottom: 95px;
+  bottom: 140px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -395,13 +405,13 @@ body.scroll-locked {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 10px;
   font-size: 14px;
   cursor: pointer;
   transition: transform 0.2s ease;
   background: rgba(255, 255, 255, 0.9);
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 .checkbox-option:hover {
@@ -410,18 +420,19 @@ body.scroll-locked {
 }
 
 .checkbox-option input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  accent-color: #8b7355;
+  accent-color: #000000;
   margin: 0;
+  margin-bottom: 8px;
 }
 
 .checkbox-option label {
   cursor: pointer;
-  color: #8b7355;
+  color: #000000;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -446,11 +457,6 @@ body.scroll-locked {
 
 .scroll-hint.hidden {
   opacity: 0;
-}
-
-.scroll-hint-text {
-  font-weight: 600;
-  letter-spacing: 0.04em;
 }
 
 .scroll-hint-arrow {
